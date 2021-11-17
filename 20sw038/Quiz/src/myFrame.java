@@ -355,21 +355,13 @@ public class myFrame extends JFrame implements ActionListener ,KeyListener {
     {
         if(e.getSource() == b1)
         {
-            
-//        	this.setVisible(false);
-        	
+
             wlcm_msg.setVisible(false);
             wlcm_msg1.setVisible(false);
             b1.setVisible(false);
             b2.setVisible(false);
             wlcm_msg2.setVisible(true);
             b3.setVisible(true);
-            
-            
-            this.setVisible(true);
-
-           
-
         }
         
         
@@ -439,10 +431,13 @@ public class myFrame extends JFrame implements ActionListener ,KeyListener {
         	
         	System.out.println("All previous conponents are hidden ...");
             
-            new randQuestionGenerate();
+            new randQuestionGenerate();//generates random number
+            
             System.out.println("Array size : " + randQuestionGenerate.question.length);
-            randQuestion = new String[randQuestionGenerate.question.length];
-            options = new String[randQuestionGenerate.question.length][5];
+            
+            randQuestion = new String[randQuestionGenerate.question.length];  //for storing random questions fetched from databse
+            
+            options = new String[randQuestionGenerate.question.length][5];   // for storing 4 options and answer 
             
             for(int i = 0; i < randQuestionGenerate.question.length ; i++  )
         	{
@@ -451,9 +446,10 @@ public class myFrame extends JFrame implements ActionListener ,KeyListener {
         		{
         			options[i][j] = randQuestionGenerate.options[i][j];
         		}
-        	}
+        	} //random questions saved in array
             
-        new QuestionTimer();
+        new QuestionTimer(); // starts timer 
+        
         button.setVisible(true);
         content.setVisible(true);
         //-----button-------
