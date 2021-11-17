@@ -58,8 +58,8 @@ public class myFrame extends JFrame implements ActionListener ,KeyListener {
     //------------------Strings---------------
     int quesNum = 0 ;
     
-    int score = 0 ;
-    int counter=0;
+    int score   =  0 ;
+    int counter = -1 ;
     String user_name , randQuestion[] , options[][];
     boolean timeup = false;
     String LButtonText[] = {"leaderboard" , "Info"};
@@ -480,7 +480,7 @@ public class myFrame extends JFrame implements ActionListener ,KeyListener {
         
         if(e.getSource() == button)
         {
-        	 
+        	 counter++;
         	 content.setVisible(false);
         	 l1.setVisible(false);
         	 leaderBoard.setVisible(false);
@@ -518,7 +518,7 @@ public class myFrame extends JFrame implements ActionListener ,KeyListener {
                  
              	 System.out.println("Question number : " + counter + "'s answer is " +options[counter][4]);
              	
-             	 counter++;
+             	 
                 
                  A.setVisible(true);
                  B.setVisible(true);

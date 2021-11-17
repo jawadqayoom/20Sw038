@@ -153,8 +153,11 @@ public class addQuestion implements ActionListener {
 	        stm.executeUpdate(sql); 
 	        System.out.println("New Question Added");
 	        ResultSet rs = stm.executeQuery(sql1);
-	        rs.next();
-	        System.out.println("questionID for newly added question is : " + rs.getInt(1) );
+	        if(rs.next())
+	        {
+	        	System.out.println("questionID for newly added question is : " + rs.getInt(1) );
+	        }
+	        
 	        
 	       }
 	    
